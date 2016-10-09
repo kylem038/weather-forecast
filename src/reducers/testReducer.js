@@ -1,7 +1,8 @@
-const testReducer = ( state=[], action ) => {
+const testReducer = ( state= [], action ) => {
   switch(action.type) {
     case "TEST_ACTION":
-      return console.log("Testing stuff")
+      console.log("Testing stuff")
+      return state;
   }
   return state
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import { Link } from 'react-router';
 // import Header from './Header';
-import Test from './Test'
+import Test from '../containers/TestContainer'
 
 export default class Home extends Component {
 

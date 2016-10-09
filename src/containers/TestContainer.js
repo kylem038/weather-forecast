@@ -4,8 +4,8 @@ import Test from '../components/Test'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
-      dispatch(testAction())
+    onClick: (text) => {
+      dispatch(testAction(text))
     }
   }
 }
