@@ -17,5 +17,4 @@ export const invalidateLocation = (location) => ({
 });
 
 export const fetchForecast = options => dispatch => {
-  // return fetch API call
 };
