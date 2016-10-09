@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import { Link } from 'react-router';
 // import Header from './Header';
+import Test from './Test'
 
 export default class Home extends Component {
 
@@ -34,6 +35,7 @@ export default class Home extends Component {
         <p className="EditLink">
           <Link to="/Settings" className="EditCities">Edit Pinned Cities >> </Link>
         </p>
+        <Test />
       </section>
     )
   }

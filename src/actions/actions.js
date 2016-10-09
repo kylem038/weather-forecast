@@ -1,4 +1,5 @@
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
+export const TEST_ACTION = 'TEST_ACTION';
 
 export const receiveForecast = (location, forecastData) => ({
   type: RECEIVE_FORECAST,
@@ -18,3 +19,7 @@ export const invalidateLocation = (location) => ({
 
 export const fetchForecast = options => dispatch => {
 };
+
+export const testAction = () => {
+  type: 'TEST_ACTION'
+}
