@@ -1,4 +1,4 @@
-const cardReducer = ( state = {}, action ) => {
+const currentPinnedCityReducer = ( state = {}, action ) => {
   switch(action.type) {
     case "CURRENT_PINNED_CITY":
       return Object.assign({}, state, action.weather);
@@ -7,4 +7,5 @@ const cardReducer = ( state = {}, action ) => {
   }
 };
 
-export default cardReducer;
+
+export default currentPinnedCityReducer;

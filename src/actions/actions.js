@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 
 export const CURRENT_LOCAL_CITY = 'CURRENT_LOCAL_CITY';
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
-export const PINNED_CITY = 'PINNED_CITY';
+export const CURRENT_PINNED_CITY = 'CURRENT_PINNED_CITY';
 export const EXTENDED_LOCAL_CITY = 'EXTENDED_LOCAL_CITY';
 
 const weatherKey = 'c6f9cf80abac0cc0d08971b6c53bfc3c';
@@ -15,9 +15,9 @@ export const currentLocalCity = (weather) => {
   };
 };
 
-export const pinnedCity = (weather) => {
+export const currentPinnedCity = (weather) => {
   return {
-    type: PINNED_CITY,
+    type: CURRENT_PINNED_CITY,
     weather
   };
 };
@@ -26,40 +26,39 @@ export const extendedLocalCity = (weather) => {
   return {
     type: EXTENDED_LOCAL_CITY,
     weather
-  }
-}
+  };
+};
 
 export const fetchCurrentLocalForecast = (location) => {
-  const lat = location.coords.latitude
-  const lon = location.coords.longitude
+  const lat = location.coords.latitude;
+  const lon = location.coords.longitude;
   return (dispatch) => {
     const weatherURL = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&units=imperial&lat=${lat}&lon=${lon}`;
     return fetch(weatherURL())
     .then(weather => weather.json())
-    .then(jsonWeather => dispatch(currentLocalCity(jsonWeather)))
+    .then(jsonWeather => dispatch(currentLocalCity(jsonWeather)));
   };
 };
 
 export const fetchExtendedLocalForecast = (location) => {
-  const lat = location.coords.latitude
-  const lon = location.coords.longitude
+  const lat = location.coords.latitude;
+  const lon = location.coords.longitude;
   return (dispatch) => {
     const weatherURL = () => `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=imperial`
     return fetch(weatherURL())
     .then(weather => weather.json())
-    .then(jsonweather => dispatch(extendedLocalCity(jsonweather)))
-  }
-}
+    .then(jsonweather => dispatch(extendedLocalCity(jsonweather)));
+  };
+};
 
-export const fetchPinnedForecast = () => {
+export const fetchPinnedCurrentForecast = (zip) => {
+  console.log(zip)
+  debugger;
   return (dispatch) => {
-    const pinnedWeatherUrl = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&zip=44001,us&units=imperial`;
+    const pinnedWeatherUrl = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&zip=${zip},us&units=imperial`;
     return fetch(pinnedWeatherUrl())
     .then(pinnedWeather => pinnedWeather.json())
-    .then(jsonPinnedWeather => {
-      console.log(jsonPinnedWeather);
-      dispatch(pinnedCity(jsonPinnedWeather));
-    });
+    .then(jsonPinnedWeather => dispatch(currentPinnedCity(jsonPinnedWeather)));
   };
 };
 

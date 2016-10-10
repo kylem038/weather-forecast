@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Settings = ({ value }) => {
+const Settings = ({ value, onClick }) => {
+  let input;
+  console.log(input)
   return (
     <section id="Settings">
       <Link to="/ExtendedForecast">Go to Extended Forecast</Link>
@@ -13,8 +15,8 @@ const Settings = ({ value }) => {
         <h3>{ '❌' } Denver</h3>
       </section>
       <section className='InputCityArea'>
-        <input placeholder='Zip Code' className='InputPinCity' />
-        <button children='Pin New City' className='SubmitNewCity' />
+        <input placeholder='Zip Code' className='InputPinCityZip' ref={ node  => {input = node}}/>
+        <button children='Pin New City' className='SubmitNewCity' onClick={(e) => onClick(input.value)}/>
       </section>
     </section>
   )
