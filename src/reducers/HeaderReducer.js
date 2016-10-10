@@ -7,6 +7,7 @@ const initialState = {
 
 
 const cityReducer = ( state = initialState, action ) => {
+  console.log(action)
   switch(action.type) {
     case "CURRENT_CITY":
       return Object.assign({}, state, action.weather);

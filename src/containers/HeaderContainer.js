@@ -3,8 +3,8 @@ import { currentCity, fetchForecast } from '../actions/actions';
 import Header from '../components/Header';
 
 const mapStateToProps = state => {
-  if (!state.localForecast) return {};
-  const { temp, outlook } = state.localForecast;
+  if (!state.HeaderReducer.localForecast) return {};
+  const { temp, outlook } = state.HeaderReducer.localForecast;
   return {
     temp,
     outlook,
