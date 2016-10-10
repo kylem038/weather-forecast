@@ -1,10 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-
 import HomePage from './HomePage';
 
-it('renders the name of the application', () => {
- const wrapper = shallow(<HomePage />);
- const title = <h1>Home</h1>
- expect(wrapper.contains(title)).toEqual(true);
+describe('HomePage', () => {
+
+  it('has an id of HomePage', () => {
+    const wrapper = shallow(<HomePage />);
+
+    expect(wrapper.is('#HomePage')).toEqual(true);
+  });
 });
