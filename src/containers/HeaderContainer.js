@@ -3,20 +3,16 @@ import { currentCity, fetchForecast } from '../actions/actions';
 import Header from '../components/Header';
 
 const mapStateToProps = state => {
-  if (!state.HeaderReducer.localForecast) return {};
-  const { temp, outlook } = state.HeaderReducer.localForecast;
+  if (!state.HeaderReducer.main) return {};
+  const { temp } = state.HeaderReducer.main;
+  const { name } = state.HeaderReducer;
+  const { description } = state.HeaderReducer.weather[0]
   return {
     temp,
-    outlook,
+    name,
+    description
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onClick: () => {
-      dispatch(fetchForecast());
-    }
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, null)(Header);

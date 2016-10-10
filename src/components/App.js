@@ -1,35 +1,37 @@
 import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
-import Header from '../containers/HeaderContainer';
+import HeaderContainer from '../containers/HeaderContainer';
 import store from '../store';
 import { fetchForecast } from '../actions/actions';
+import { bindActionCreators } from 'redux';
 
 class App extends Component {
+  getLocalCoordinatesAndWeather() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((location) => {
+        return this.props.fetchForecast(location)
+      })
+    }
+  }
+
   componentDidMount() {
-    this.props.didMount();
+    this.getLocalCoordinatesAndWeather()
   }
 
   render() {
     return (
         <section className="App">
           <h1 className="page-title">Weather Tracker</h1>
-            <Header />
+            <HeaderContainer />
           <div>{this.props.children}</div>
         </section>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {};
-}
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    didMount: () => {
-      dispatch(fetchForecast());
-    }
-  };
+  return bindActionCreators({fetchForecast}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
