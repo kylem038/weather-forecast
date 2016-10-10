@@ -1,15 +1,15 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {currentCity, CURRENT_CITY } from './actions';
+import {currentLocalCity, CURRENT_LOCAL_CITY } from './actions';
 
 
 describe('actions', () => {
   it('should create an action to identify current city', () => {
     const weather = 'Cloudy';
     const expectedAction = {
-      type: CURRENT_CITY,
+      type: CURRENT_LOCAL_CITY,
       weather
     };
-    expect(currentCity(weather)).toEqual(expectedAction);
+    expect(currentLocalCity(weather)).toEqual(expectedAction);
   });
 });
