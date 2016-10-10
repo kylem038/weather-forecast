@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import settings from './settings';
+// import settings from './settings';
+import cityReducer from './current-city';
 
 const rootReducer = combineReducers({
-  settings
+  // settings,
+  cityReducer
 });
 
 export default rootReducer;

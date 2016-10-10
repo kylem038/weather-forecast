@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Header = ({ value }) => {
+const Header = ({ onClick, temp, outlook }) => {
+  console.log(temp)
+  console.log(outlook)
   return(
-    <section id="header">
-      <p id="current-local-forecast">Current forecast for <span id="city-name">Redux</span></p>
+    <section id="header" onClick={() => onClick()}>
+      <p id="current-local-forecast">Current forecast for <span id="city-name">Redux</span>: {outlook} {temp}</p>
       <p id="view-extended-forecast">Rainy & Sad</p>
     </section>
   )
