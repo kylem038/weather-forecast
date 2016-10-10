@@ -7,7 +7,7 @@ const { name } = currentWeather;
 const { speed } = currentWeather.wind;
 const { description } = currentWeather.weather;
 
-const CityShortForecast = ({ value}) => {
+const CityShortForecast = ({ value }) => {
   return (
     <article className="CityForecast">
       <h2 className="city-name">Current weather for {name}</h2>
