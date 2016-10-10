@@ -1,28 +1,47 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-export const CURRENT_CITY = 'CURRENT_CITY';
+export const CURRENT_LOCAL_CITY = 'CURRENT_LOCAL_CITY';
 export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
+export const EXTENDED_LOCAL_CITY = 'EXTENDED_LOCAL_CITY'
 
 const weatherKey = 'c6f9cf80abac0cc0d08971b6c53bfc3c';
 
-export const currentCity = (weather) => {
+export const currentLocalCity = (weather) => {
   return {
-    type: CURRENT_CITY,
+    type: CURRENT_LOCAL_CITY,
     weather
   }
 };
 
-export const fetchForecast = (location) => {
+export const extendedLocalCity = (weather) => {
+  return {
+    type: EXTENDED_LOCAL_CITY,
+    weather
+  }
+}
+
+export const fetchCurrentLocalForecast = (location) => {
   const lat = location.coords.latitude
   const lon = location.coords.longitude
   return (dispatch) => {
-    const weatherUrl = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&units=imperial&lat=${lat}&lon=${lon}`;
-    return fetch(weatherUrl())
+    const weatherURL = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&units=imperial&lat=${lat}&lon=${lon}`;
+    return fetch(weatherURL())
     .then(weather => weather.json())
-    .then(jsonWeather => dispatch(currentCity(jsonWeather)))
+    .then(jsonWeather => dispatch(currentLocalCity(jsonWeather)))
   };
 };
+
+export const fetchExtendedLocalForecast = (location) => {
+  const lat = location.coords.latitude
+  const lon = location.coords.longitude
+  return (dispatch) => {
+    const weatherURL = () => `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=imperial`
+    return fetch(weatherURL())
+    .then(weather => weather.json())
+    .then(jsonweather => dispatch(extendedLocalCity(jsonweather)))
+  }
+}
 
 const receiveForecast = ({ main, weather }) => {
   return {
