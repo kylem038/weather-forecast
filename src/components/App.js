@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
 import HeaderContainer from '../containers/HeaderContainer';
 import store from '../store';
-import { fetchLocalForecast, fetchPinnedForecast } from '../actions/actions';
+import { fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedForecast } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
 
@@ -10,10 +10,17 @@ class App extends Component {
   getLocalCoordinatesAndWeather() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((location) => {
-        return this.props.fetchLocalForecast(location)
-      })
+        return this.props.fetchCurrentLocalForecast(location);
+      });
     }
   }
+    getExtendedLocalWeather() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((location) => {
+          return this.props.fetchExtendedLocalForecast(location);
+        });
+      }
+    }
 
   getWeatherByZipcode() {
     return this.props.fetchPinnedForecast();
@@ -22,6 +29,7 @@ class App extends Component {
   componentDidMount() {
     this.getLocalCoordinatesAndWeather();
     this.getWeatherByZipcode();
+    this.getExtendedLocalWeather();
   }
 
   render() {
@@ -36,7 +44,7 @@ class App extends Component {
 
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchLocalForecast, fetchPinnedForecast}, dispatch);
+  return bindActionCreators({fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedForecast}, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(App);

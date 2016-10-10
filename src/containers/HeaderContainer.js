@@ -3,14 +3,14 @@ import { currentCity, fetchLocalForecast } from '../actions/actions';
 import Header from '../components/Header';
 
 const mapStateToProps = state => {
-  if (!state.HeaderReducer.main) return {};
-  const { temp } = state.HeaderReducer.main;
-  const { name } = state.HeaderReducer;
-  const { description } = state.HeaderReducer.weather[0];
+  if (!state.CurrentCityReducer.main) return {};
+  const { temp } = state.CurrentCityReducer.main;
+  const { name } = state.CurrentCityReducer;
+  const { main } = state.CurrentCityReducer.weather[0]
   return {
     temp,
     name,
-    description
+    main
   };
 };
 

@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import HeaderReducer from './HeaderReducer';
+import CurrentCityReducer from './CurrentCityReducer';
+import ExtendedLocalCityReducer from './ExtendedLocalCityReducer';
 import WeatherCardReducer from './WeatherCardReducer';
 
-
 const rootReducer = combineReducers({
-  HeaderReducer,
+  ExtendedLocalCityReducer,
+  CurrentCityReducer,
   WeatherCardReducer
 });
 

@@ -6,13 +6,14 @@ const initialState = {
 }
 
 
-const cityReducer = ( state = initialState, action ) => {
+const currentCityReducer = ( state = initialState, action ) => {
   switch(action.type) {
-    case "CURRENT_CITY":
+    case "CURRENT_LOCAL_CITY":
       return Object.assign({}, state, action.weather);
     default:
       return state;
   }
 };
 
-export default cityReducer;
+
+export default currentCityReducer;
