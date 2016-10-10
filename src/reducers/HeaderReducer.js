@@ -1,19 +1,16 @@
 const initialState = {
   localForecast: {
     temp: 0,
-    outlook: 'amaze',
+    outlook: 'normal',
   }
 }
 
 
 const cityReducer = ( state = initialState, action ) => {
-  // console.log(state)
   switch(action.type) {
     case "CURRENT_CITY":
-      // console.log('Mikes a nice guy');
-      return state;
-    case "TAKE":
-      // console.log(action.type)
+      return Object.assign({}, state, action.weather);
+    case "RECEIVE_FORECAST":
       return {
         localForecast: {
           temp: action.main.temp,
@@ -26,11 +23,3 @@ const cityReducer = ( state = initialState, action ) => {
 };
 
 export default cityReducer;
-
-
-// state = {
-//   localForecast: {
-//     temp: Number,
-//     outlook: String,
-//   }
-// }

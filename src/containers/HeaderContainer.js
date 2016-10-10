@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { currentCity } from '../actions/actions';
+import { currentCity, fetchForecast } from '../actions/actions';
 import Header from '../components/Header';
 
 const mapStateToProps = state => {
@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: () => {
-      dispatch(currentCity());
+      dispatch(fetchForecast());
     }
   };
 };

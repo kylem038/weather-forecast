@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 // import settings from './settings';
-import cityReducer from './current-city';
+import HeaderReducer from './HeaderReducer';
 
 const rootReducer = combineReducers({
   // settings,
-  cityReducer
+  HeaderReducer
 });
 
 export default rootReducer;

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
-import Header from '../containers/current-city';
+import Header from '../containers/HeaderContainer';
 import store from '../store';
 import { fetchForecast } from '../actions/actions';
-// import { Link, Router, IndexRoute, Route, browserHistory } from 'react-router';
 
 class App extends Component {
   componentDidMount() {
@@ -12,13 +11,11 @@ class App extends Component {
 
   render() {
     return (
-      // <Provider store={store}>
         <section className="App">
           <h1 className="page-title">Weather Tracker</h1>
             <Header />
           <div>{this.props.children}</div>
         </section>
-      // </Provider>
     )
   }
 }
