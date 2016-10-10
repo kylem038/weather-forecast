@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import settings from './settings';
+// import settings from './settings';
+import HeaderReducer from './HeaderReducer';
 
 const rootReducer = combineReducers({
-  settings
+  // settings,
+  HeaderReducer
 });
 
 export default rootReducer;
