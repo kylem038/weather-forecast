@@ -1,23 +1,14 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-// import createLogger from 'redux-logger';
-// const middleware = [thunk, createLogger];
 import rootReducer from './reducers/reducers.js';
-// import currentWeather from './data/fake-current';
+const middleware = [ thunk ];
 
-// const store = createStore(rootReducer, defaultState);
-
-//setting state in store - can refactor to set state in reducers later
-// const defaultState = {
-//   currentWeather
-// };
 
 console.log(rootReducer)
 
-const store = createStore(
-  rootReducer,
-  {},
-  applyMiddleware(thunk)
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, {}, composeEnhancers(
+  applyMiddleware(...middleware)
+));
 
 export default store;

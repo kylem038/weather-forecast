@@ -7,13 +7,13 @@ const initialState = {
 
 
 const cityReducer = ( state = initialState, action ) => {
-  console.log(state)
+  // console.log(state)
   switch(action.type) {
     case "CURRENT_CITY":
-      console.log('Mikes a nice guy');
+      // console.log('Mikes a nice guy');
       return state;
     case "TAKE":
-      console.log(action.type)
+      // console.log(action.type)
       return {
         localForecast: {
           temp: action.main.temp,
