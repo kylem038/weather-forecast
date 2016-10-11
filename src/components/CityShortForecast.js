@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
-export default class CityShortForecastCard extends React.Component {
+export default class CityShortForecast extends React.Component {
   constructor(props) {
     super()
   }
@@ -10,11 +9,11 @@ export default class CityShortForecastCard extends React.Component {
     debugger;
     return(
       <article className="CityForecast">
-           <h2 className="city-name">Current weather for {this.props.cityData.name}</h2>
-           <ul>
-             <li className="Temp">Temperature: {this.props.cityData.main.temp} º F</li>
-             <li className="Description">Weather:  {this.props.cityData.weather[0].main}</li>
-           </ul>
+         <h2 className="city-name">Current weather for {this.props.cityData.name}</h2>
+         <ul>
+           <li className="Temp">Temperature: {this.props.cityData.main.temp} º F</li>
+           <li className="Description">Weather:  {this.props.cityData.weather[0].main}</li>
+         </ul>
       </article>
     )
   }

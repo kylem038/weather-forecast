@@ -43,9 +43,9 @@ const extendedForecast = ({
           <li className="dayFiveMaxTemp">Max Temp: {maxTemp5} </li>
         </ul>
       </div>
-        <Link to="/Settings">Go to pinned cities</Link>
-        <Link to="/">Go to HomePage</Link>
-   </section>
+      <Link to="/Settings">Go to pinned cities</Link>
+      <Link to="/">Go to HomePage</Link>
+    </section>
   )
 }
 

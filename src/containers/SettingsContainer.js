@@ -4,7 +4,7 @@ import Settings from '../components/Settings';
 
 const mapStateToProps = (state) => {
   if (!state.WeatherCardReducer[0]) return {};
-  const cityArray = state.WeatherCardReducer
+  const cityArray = state.WeatherCardReducer;
   return {
     cityArray
   };

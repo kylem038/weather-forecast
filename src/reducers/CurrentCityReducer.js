@@ -5,7 +5,6 @@ const initialState = {
   }
 };
 
-
 const currentCityReducer = ( state = initialState, action ) => {
   switch(action.type) {
     case "CURRENT_LOCAL_CITY":
