@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PinnedCityCurrentContainer from '../containers/PinnedCityCurrentContainer';
+import CityShortForecast from './CityShortForecast';
 
-const Home = ({ value }) => {
+const Home = ({ cityArray }) => {
   return (
     <section id="HomePage">
       <div className="CityContainer">
-        <PinnedCityCurrentContainer />
+      {cityArray ? cityArray.map(city => <div key={city.id}><CityShortForecast cityData={city}/></div>) : ''}
         <article className="PinNewCity">
           <Link to="/Settings" className="">+ Pin another city</Link>
         </article>

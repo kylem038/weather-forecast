@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Settings = ({ name, onSubmit }) => {
+const Settings = ({ name, onSubmit, cityArray }) => {
   let input;
   return (
     <section id="Settings">
       <Link to="/ExtendedForecast">Go to Extended Forecast</Link>
       <Link to="/">Go to HomePage</Link>
-      <h1>Pinned Cities:</h1>
-      <section className='PinnedCities'>
-        <h3>{ '❌' } { name } </h3>
-        <h3>{ '❌' } </h3>
-        <h3>{ '❌' } </h3>
-      </section>
+      <ul>
+        {cityArray ?
+          cityArray.map(city => <li key={city.id}>{city.name}</li>) : <li> No Pinned Cities </li>}
+      </ul>
       <form className='InputCityArea' onSubmit={ (e) => {
           e.preventDefault()
           onSubmit(input.value)
