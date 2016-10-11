@@ -3,7 +3,7 @@ const initialState = {
     temp: 0,
     outlook: 'normal',
   }
-}
+};
 
 
 const currentCityReducer = ( state = initialState, action ) => {

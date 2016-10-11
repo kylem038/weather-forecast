@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { currentCity, fetchForecast } from '../actions/actions';
+import { currentCity, fetchLocalForecast } from '../actions/actions';
 import Header from '../components/Header';
 
 const mapStateToProps = state => {

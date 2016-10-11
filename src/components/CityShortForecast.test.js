@@ -58,5 +58,4 @@ describe('CityShortForecast', () => {
 
     expect(wrapper.find('.Description').text()).toEqual('Weather: overcast clouds');
   });
-
 });

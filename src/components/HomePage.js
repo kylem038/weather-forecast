@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
-import CityShortForecast from './CityShortForecast';
+import PinnedCityCurrentContainer from '../containers/PinnedCityCurrentContainer';
 
 const Home = ({ value }) => {
   return (
     <section id="HomePage">
       <div className="CityContainer">
-        <CityShortForecast />
-        <CityShortForecast />
+        <PinnedCityCurrentContainer />
         <article className="PinNewCity">
-          + Pin another city
+          <Link to="/Settings" className="">+ Pin another city</Link>
         </article>
       </div>
       <section className="EditLink">
