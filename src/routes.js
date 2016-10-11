@@ -3,7 +3,7 @@ import { IndexRoute, Router, Route  } from 'react-router';
 import App from './components/App';
 import HomePage from './containers/HomePageContainer';
 import Settings from './containers/SettingsContainer';
-import ExtendedForecast from './components/ExtendedForecast';
+import ExtendedForecast from './containers/ExtendedForecast';
 
 const Routes = (props) => (
   <Router {...props}>
