@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import currentWeather from '../data/fake-current';
 
 const CityShortForecast = ({ temp, name, main }) => {
   return (
