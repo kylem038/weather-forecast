@@ -4,13 +4,9 @@ import Settings from '../components/Settings';
 
 const mapStateToProps = (state) => {
   if (!state.WeatherCardReducer[0]) return {};
-  const { name } = state.WeatherCardReducer[0];
-  const { temp } = state.WeatherCardReducer[0].main;
-  const { main } = state.WeatherCardReducer[0].weather[0]
+  const cityArray = state.WeatherCardReducer
   return {
-    name,
-    temp,
-    main
+    cityArray
   };
 };
 
