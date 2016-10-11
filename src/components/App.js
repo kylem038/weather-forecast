@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import HeaderContainer from '../containers/HeaderContainer';
-import store from '../store';
 import { fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedCurrentForecast } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
