@@ -13,8 +13,11 @@ export default class CityShortForecastCard extends React.Component {
              <li className="Temp">Temperature: {this.props.cityData.main.temp} º F</li>
              <li className="Description">Weather:  {this.props.cityData.weather[0].main}</li>
            </ul>
-           <Link to="/ExtendedPinnedForecast" className="ExtendedForecast">View extended forecast</Link>
       </article>
     )
   }
 }
+
+
+
+{/* <Link to="/ExtendedPinnedForecast" className="ExtendedForecast">View extended forecast</Link> */}

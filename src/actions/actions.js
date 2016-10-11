@@ -29,6 +29,7 @@ export const extendedLocalCity = (weather) => {
 };
 
 export const extendedPinnedCity = (weather) => {
+  debugger;
   return {
     type: EXTENDED_PINNED_CITY,
     weather

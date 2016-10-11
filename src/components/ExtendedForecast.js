@@ -7,7 +7,6 @@ const extendedForecast = ({
   date1, date2, date3, date4, date5,
   weather1, weather2, weather3, weather4, weather5, data
  }) => {
-   console.log(minTemp1)
   return (
     <section className="ExtendedForecast">
       <div className="fiveDayForecast">

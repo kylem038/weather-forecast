@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { currentCity, fetchForecast } from '../actions/actions';
 import ExtendedForecast from '../components/ExtendedForecast';
 
 const mapStateToProps = state => {
   if (!state.ExtendedLocalCityReducer.city) return {};
-  const minTemp1  = state.ExtendedLocalCityReducer.list[3].main.temp_min;
+      const minTemp1  = state.ExtendedLocalCityReducer.list[3].main.temp_min;
          const minTemp2  = state.ExtendedLocalCityReducer.list[11].main.temp_min;
          const minTemp3  = state.ExtendedLocalCityReducer.list[19].main.temp_min;
          const minTemp4  = state.ExtendedLocalCityReducer.list[27].main.temp_min;
