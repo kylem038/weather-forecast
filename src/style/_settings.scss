@@ -6,7 +6,7 @@
 
 #Settings h1 {
   font-size: 1.5em;
-  margin: 5%;
+  margin-bottom: 5%;
 }
 
 #Settings h3 {
@@ -32,4 +32,9 @@
 
 .InputCityArea {
   margin: 5%;
+}
+
+.settings-screen-link {
+  text-decoration: none;
+  font-size: 24px;
 }
