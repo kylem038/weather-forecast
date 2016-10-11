@@ -30,9 +30,9 @@ describe('Main Container', () => {
     };
   }
 
-    it('should render Main container', () => {
-      const { Component } = setup();
+  it('should render Main container', () => {
+    const { Component } = setup();
 
-      expect(Component.length).toBeTruthy();
-    });
+    expect(Component.length).toBeTruthy();
   });
+});

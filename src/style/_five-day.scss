@@ -5,13 +5,38 @@
 .fiveDayForecast {
   background-color: $color-forecast-background;
   border: 2px solid darken($color-forecast-background, 50);
-  height: 70vh;
   margin: 3% auto;
   width: 85%;
 }
 
+.navigation {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.settingsLink {
+  padding: 20px;
+  margin: 20px;
+  text-decoration: none;
+  background-color: #e86060;
+  border: 2px solid #a54343;
+}
+
+.homepageLink {
+  padding: 20px;
+  margin: 20px;
+  text-decoration: none;
+  background-color: #e86060;
+  border: 2px solid #a54343;
+}
+
 .forecast,
 .forecast-title {
+  .Date {
+    background-color: #e86060;
+    border: 2px solid #a54343;
+  }
   @include font-style-bold(1.2em);
   margin: 3%;
   li {
