@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import cityData from '../data/fake-current';
-
 export default class CityShortForecast extends React.Component {
   constructor(props) {
     super()
