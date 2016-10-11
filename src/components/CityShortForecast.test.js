@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import CityShortForecast from './CityShortForecast';
-import currentWeather from '../data/fake-current';
+import cityData from '../data/fake-current';
+import PinnedCityCurrentContainer from '../containers/PinnedCityCurrentContainer';
 
 describe('CityShortForecast', () => {
 
-  it('has an class of CityForecast', () => {
+  it('has a class of CityForecast', () => {
     const wrapper = shallow(<CityShortForecast />);
 
     expect(wrapper.is('.CityForecast')).toEqual(true);

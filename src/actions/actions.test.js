@@ -1,13 +1,6 @@
-// import React from 'react';
-// import {shallow} from 'enzyme';
 import {
   currentLocalCity, CURRENT_LOCAL_CITY, extendedLocalCity, EXTENDED_LOCAL_CITY, currentPinnedCity, CURRENT_PINNED_CITY, extendedPinnedCity, EXTENDED_PINNED_CITY
 } from './actions';
-// import { } from './actions';
-// import { } from './actions';
-// import { } from '/.actions';
-
-
 
 describe('actions', () => {
   it('should create an action to identify current local city forecast', () => {
