@@ -1,23 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Settings = ({ value, onClick }) => {
+const Settings = ({ name, onSubmit }) => {
+  console.log(name)
   let input;
-  console.log(input)
   return (
     <section id="Settings">
       <Link to="/ExtendedForecast">Go to Extended Forecast</Link>
       <Link to="/">Go to HomePage</Link>
       <h1>Pinned Cities:</h1>
       <section className='PinnedCities'>
-        <h3>{ '❌' } Boston</h3>
+        <h3>{ '❌' } { name } </h3>
         <h3>{ '❌' } Jersey</h3>
         <h3>{ '❌' } Denver</h3>
       </section>
-      <section className='InputCityArea'>
+      <form className='InputCityArea' onSubmit={ (e) => {
+          e.preventDefault()
+          onSubmit(input.value)
+      }}>
         <input placeholder='Zip Code' className='InputPinCityZip' ref={ node  => {input = node}}/>
-        <button children='Pin New City' className='SubmitNewCity' onClick={(e) => onClick(input.value)}/>
-      </section>
+        <button children='Pin New City' className='SubmitNewCity'/>
+      </form>
     </section>
   )
 }

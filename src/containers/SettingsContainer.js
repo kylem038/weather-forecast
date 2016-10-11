@@ -2,18 +2,22 @@ import { connect } from 'react-redux';
 import { fetchPinnedCurrentForecast } from '../actions/actions';
 import Settings from '../components/Settings';
 
-const mapStateToProps = state => {
-  if (!state.WeatherCardReducer.main) return {};
-  const { name } = state.WeatherCardReducer;
+const mapStateToProps = (state) => {
+  if (!state.WeatherCardReducer[0]) return {};
+  const { name } = state.WeatherCardReducer[0];
+  const { temp } = state.WeatherCardReducer[0].main;
+  const { main } = state.WeatherCardReducer[0].weather[0]
   return {
-    name
+    name,
+    temp,
+    main
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
-      dispatch(fetchPinnedCurrentForecast());
+    onSubmit: (zip) => {
+      dispatch(fetchPinnedCurrentForecast(zip));
     }
   };
 };

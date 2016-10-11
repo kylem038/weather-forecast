@@ -40,6 +40,16 @@ export const fetchCurrentLocalForecast = (location) => {
   };
 };
 
+export const fetchPinnedCurrentForecast = (zip) => {
+  const zipInt = parseInt(zip)
+  return (dispatch) => {
+    const pinnedWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&zip=${zipInt},us&units=imperial`;
+    return fetch(pinnedWeatherUrl)
+    .then(pinnedWeather => pinnedWeather.json())
+    .then(jsonPinnedWeather => dispatch(currentPinnedCity(jsonPinnedWeather)));
+  };
+};
+
 export const fetchExtendedLocalForecast = (location) => {
   const lat = location.coords.latitude;
   const lon = location.coords.longitude;
@@ -50,21 +60,3 @@ export const fetchExtendedLocalForecast = (location) => {
     .then(jsonweather => dispatch(extendedLocalCity(jsonweather)));
   };
 };
-
-export const fetchPinnedCurrentForecast = (zip) => {
-  console.log(zip)
-  debugger;
-  return (dispatch) => {
-    const pinnedWeatherUrl = () => `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&zip=${zip},us&units=imperial`;
-    return fetch(pinnedWeatherUrl())
-    .then(pinnedWeather => pinnedWeather.json())
-    .then(jsonPinnedWeather => dispatch(currentPinnedCity(jsonPinnedWeather)));
-  };
-};
-
-const receiveForecast = ({ main, weather }) => {
-  return {
-  type: RECEIVE_FORECAST,
-  main,
-  weather
-}};
