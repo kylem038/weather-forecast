@@ -6,6 +6,7 @@ import Settings from './containers/SettingsContainer';
 import ExtendedForecast from './components/ExtendedForecast';
 import ExtendedPinnedForecast from './containers/ExtendedPinnedForecastContainer';
 
+
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App}>
