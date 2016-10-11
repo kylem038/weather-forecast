@@ -66,3 +66,15 @@ export const fetchExtendedLocalForecast = (location) => {
     .then(jsonweather => dispatch(extendedLocalCity(jsonweather)));
   };
 };
+
+export const fetchExtendedPinnedForecast = (zip) => {
+  const zipInt = parseInt(zip, 10);
+  return (dispatch) => {
+    const pinnedExtendedWeatherUrl = `http://api.openweathermap.org/data/2.5/forecast?zip=${zipInt}&appid=${weatherKey}`;
+    return fetch(pinnedExtendedWeatherUrl)
+    .then(pinnedExtendedWeather => pinnedExtendedWeather.json())
+    .then(jsonweather => {
+      dispatch(extendedPinnedCity(jsonweather));
+    });
+  };
+};

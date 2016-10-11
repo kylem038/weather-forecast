@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Settings = ({ name, onSubmit, cityArray }) => {
+const Settings = ({ name, onSubmit, cityArray, getPinnedExtendedForecast }) => {
   let input;
   return (
     <section id="Settings">

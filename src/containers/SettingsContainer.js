@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPinnedCurrentForecast } from '../actions/actions';
+import { fetchPinnedCurrentForecast, fetchExtendedPinnedForecast } from '../actions/actions';
 import Settings from '../components/Settings';
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (zip) => {
       dispatch(fetchPinnedCurrentForecast(zip));
+      dispatch(fetchExtendedPinnedForecast(zip))
     }
   };
 };
