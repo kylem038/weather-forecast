@@ -40,7 +40,7 @@ export const fetchCurrentLocalForecast = (location) => {
 };
 
 export const fetchPinnedCurrentForecast = (zip) => {
-  const zipInt = parseInt(zip)
+  const zipInt = parseInt(zip, 10);
   return (dispatch) => {
     const pinnedWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?APPID=${weatherKey}&zip=${zipInt},us&units=imperial`;
     return fetch(pinnedWeatherUrl)

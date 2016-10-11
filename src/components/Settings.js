@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Settings = ({ name, onSubmit }) => {
-  console.log(name)
   let input;
   return (
     <section id="Settings">
@@ -11,8 +10,8 @@ const Settings = ({ name, onSubmit }) => {
       <h1>Pinned Cities:</h1>
       <section className='PinnedCities'>
         <h3>{ '❌' } { name } </h3>
-        <h3>{ '❌' } Jersey</h3>
-        <h3>{ '❌' } Denver</h3>
+        <h3>{ '❌' } </h3>
+        <h3>{ '❌' } </h3>
       </section>
       <form className='InputCityArea' onSubmit={ (e) => {
           e.preventDefault()

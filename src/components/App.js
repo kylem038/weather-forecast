@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import HeaderContainer from '../containers/HeaderContainer';
-import store from '../store';
-import { fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedCurrentForecast } from '../actions/actions';
+import { fetchCurrentLocalForecast, fetchExtendedLocalForecast } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
 
@@ -22,10 +21,6 @@ class App extends Component {
       }
     }
 
-  getWeatherByZipcode() {
-    return this.props.fetchPinnedCurrentForecast();
-  }
-
   componentDidMount() {
     this.getLocalCoordinatesAndWeather();
     this.getExtendedLocalWeather();
@@ -42,7 +37,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedCurrentForecast}, dispatch);
+  return bindActionCreators({fetchCurrentLocalForecast, fetchExtendedLocalForecast}, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(App);
