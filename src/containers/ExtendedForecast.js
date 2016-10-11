@@ -4,9 +4,9 @@ import ExtendedForecast from '../components/ExtendedForecast';
 
 const mapStateToProps = state => {
   if (!state.ExtendedLocalCityReducer.main.weatherdata) return {};
-  const { weatherdata } = state.ExtendedLocalCityReducer.main
+  const data = state.ExtendedLocalCityReducer.city.id;
   return {
-    weatherdata
+    data
   };
 };
 

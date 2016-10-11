@@ -6,7 +6,7 @@ const mapStateToProps = state => {
   if (!state.CurrentCityReducer.main) return {};
   const { temp } = state.CurrentCityReducer.main;
   const { name } = state.CurrentCityReducer;
-  const { main } = state.CurrentCityReducer.weather[0]
+  const { main } = state.CurrentCityReducer.weather[0];
   return {
     temp,
     name,
