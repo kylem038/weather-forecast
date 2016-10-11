@@ -1,7 +1,6 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 export const CURRENT_LOCAL_CITY = 'CURRENT_LOCAL_CITY';
-export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
 export const EXTENDED_LOCAL_CITY = 'EXTENDED_LOCAL_CITY';
 
 const weatherKey = 'c6f9cf80abac0cc0d08971b6c53bfc3c';
@@ -41,10 +40,3 @@ export const fetchExtendedLocalForecast = (location) => {
     .then(jsonweather => dispatch(extendedLocalCity(jsonweather)));
   };
 };
-
-const receiveForecast = ({ main, weather }) => {
-  return {
-  type: RECEIVE_FORECAST,
-  main,
-  weather
-}};

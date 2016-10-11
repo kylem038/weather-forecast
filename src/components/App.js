@@ -10,33 +10,32 @@ class App extends Component {
   getLocalCoordinatesAndWeather() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((location) => {
-        return this.props.fetchCurrentLocalForecast(location)
-      })
+        return this.props.fetchCurrentLocalForecast(location);
+      });
     }
   }
     getExtendedLocalWeather() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((location) => {
-          return this.props.fetchExtendedLocalForecast(location)
-        })
+          return this.props.fetchExtendedLocalForecast(location);
+        });
       }
     }
 
   componentDidMount() {
-    this.getLocalCoordinatesAndWeather()
-    this.getExtendedLocalWeather()
+    this.getLocalCoordinatesAndWeather();
+    this.getExtendedLocalWeather();
   }
 
   render() {
     return (
-        <section className="App">
-            <HeaderContainer />
-          <div>{this.props.children}</div>
-        </section>
+      <section className="App">
+          <HeaderContainer />
+        <div>{this.props.children}</div>
+      </section>
     )
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchCurrentLocalForecast, fetchExtendedLocalForecast}, dispatch);

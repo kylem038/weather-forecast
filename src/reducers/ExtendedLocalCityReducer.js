@@ -1,6 +1,6 @@
 const initialState = {
   defaultState: []
-}
+};
 
 
 const ExtendedLocalCityReducer = ( state = initialState, action ) => {

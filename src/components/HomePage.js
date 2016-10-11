@@ -9,7 +9,7 @@ const Home = ({ value }) => {
         <CityShortForecast />
         <CityShortForecast />
         <article className="PinNewCity">
-          + Pin another city
+          <Link to="/Settings" className="">+ Pin another city</Link>
         </article>
       </div>
       <section className="EditLink">
