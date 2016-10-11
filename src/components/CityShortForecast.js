@@ -7,6 +7,7 @@ export default class CityShortForecastCard extends React.Component {
   }
 
   render() {
+    debugger;
     return(
       <article className="CityForecast">
            <h2 className="city-name">Current weather for {this.props.cityData.name}</h2>
