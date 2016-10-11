@@ -44,6 +44,11 @@
   position: absolute;
 }
 
+.PinLink {
+  color: black;
+  text-decoration: none;
+}
+
 .EditCities {
   @include font-style-bold(1em);
   color: black;

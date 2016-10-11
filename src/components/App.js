@@ -4,7 +4,6 @@ import HeaderContainer from '../containers/HeaderContainer';
 import { fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedCurrentForecast } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
-
 class App extends Component {
   getLocalCoordinatesAndWeather() {
     if (navigator.geolocation) {
@@ -13,6 +12,7 @@ class App extends Component {
       });
     }
   }
+  
     getExtendedLocalWeather() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((location) => {
@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <section className="App">
-          <HeaderContainer />
+        <HeaderContainer />
         <div>{this.props.children}</div>
       </section>
     )
