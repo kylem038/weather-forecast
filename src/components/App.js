@@ -33,14 +33,13 @@ class App extends Component {
 
   render() {
     return (
-        <section className="App">
-            <HeaderContainer />
-          <div>{this.props.children}</div>
-        </section>
+      <section className="App">
+          <HeaderContainer />
+        <div>{this.props.children}</div>
+      </section>
     )
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({fetchCurrentLocalForecast, fetchExtendedLocalForecast, fetchPinnedCurrentForecast}, dispatch);

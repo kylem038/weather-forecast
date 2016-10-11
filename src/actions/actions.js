@@ -1,8 +1,6 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-
 export const CURRENT_LOCAL_CITY = 'CURRENT_LOCAL_CITY';
-export const RECEIVE_FORECAST = 'RECEIVE_FORECAST';
 export const CURRENT_PINNED_CITY = 'CURRENT_PINNED_CITY';
 export const EXTENDED_LOCAL_CITY = 'EXTENDED_LOCAL_CITY';
 
@@ -13,6 +11,7 @@ export const currentLocalCity = (weather) => {
     type: CURRENT_LOCAL_CITY,
     weather
   };
+
 };
 
 export const currentPinnedCity = (weather) => {
@@ -54,7 +53,7 @@ export const fetchExtendedLocalForecast = (location) => {
   const lat = location.coords.latitude;
   const lon = location.coords.longitude;
   return (dispatch) => {
-    const weatherURL = () => `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=imperial`
+    const weatherURL = () => `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherKey}&units=imperial`;
     return fetch(weatherURL())
     .then(weather => weather.json())
     .then(jsonweather => dispatch(extendedLocalCity(jsonweather)));

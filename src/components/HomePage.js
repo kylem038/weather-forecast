@@ -8,7 +8,7 @@ const Home = ({ value }) => {
       <div className="CityContainer">
         <PinnedCityCurrentContainer />
         <article className="PinNewCity">
-          + Pin another city
+          <Link to="/Settings" className="">+ Pin another city</Link>
         </article>
       </div>
       <section className="EditLink">
