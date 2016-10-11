@@ -4,7 +4,9 @@ import ExtendedForecast from '../components/ExtendedForecast';
 
 const mapStateToProps = state => {
   if (!state.ExtendedLocalCityReducer.city) return {};
-  const minTemp1  = state.ExtendedLocalCityReducer.list[3].main.temp_min;
+         const city = state.ExtendedLocalCityReducer.city.name;
+
+         const minTemp1  = state.ExtendedLocalCityReducer.list[3].main.temp_min;
          const minTemp2  = state.ExtendedLocalCityReducer.list[11].main.temp_min;
          const minTemp3  = state.ExtendedLocalCityReducer.list[19].main.temp_min;
          const minTemp4  = state.ExtendedLocalCityReducer.list[27].main.temp_min;
@@ -31,7 +33,7 @@ const mapStateToProps = state => {
     minTemp1, minTemp2, minTemp3, minTemp4, minTemp5,
     maxTemp1, maxTemp2, maxTemp3, maxTemp4, maxTemp5,
     date1, date2, date3, date4, date5,
-    weather1, weather2, weather3, weather4, weather5
+    weather1, weather2, weather3, weather4, weather5, city
   };
 };
 
