@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-// import settings from './settings';
 import CurrentCityReducer from './CurrentCityReducer';
 import ExtendedLocalCityReducer from './ExtendedLocalCityReducer';
+import WeatherCardReducer from './WeatherCardReducer';
 
 const rootReducer = combineReducers({
   ExtendedLocalCityReducer,
-  CurrentCityReducer
+  CurrentCityReducer,
+  WeatherCardReducer
 });
 
 export default rootReducer;
