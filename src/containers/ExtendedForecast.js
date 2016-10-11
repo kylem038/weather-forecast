@@ -3,10 +3,11 @@ import { currentCity, fetchForecast } from '../actions/actions';
 import ExtendedForecast from '../components/ExtendedForecast';
 
 const mapStateToProps = state => {
-  if (!state.ExtendedLocalCityReducer.main.weatherdata) return {};
-  const { weatherdata } = state.ExtendedLocalCityReducer.main
+  if (!state.ExtendedLocalCityReducer.city.id) return {};
+  const data = state.ExtendedLocalCityReducer.city.id;
+  console.log(data);
   return {
-    weatherdata
+    data
   };
 };
 
